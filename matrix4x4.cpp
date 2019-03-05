@@ -1,7 +1,7 @@
 #include "matrix4x4.h"
 #include "math.h"
 
-//constructor
+//constructor, brukt når en skal returnere en array som en matrise
 Matrix4x4::Matrix4x4(float arrei[4][4]) : arr{{arrei[0][0],arrei[0][1],arrei[0][2],arrei[0][3]},
                                               {arrei[1][0],arrei[1][1],arrei[1][2],arrei[1][3]},
                                               {arrei[2][0],arrei[2][1],arrei[2][2],arrei[2][3]},
@@ -9,7 +9,7 @@ Matrix4x4::Matrix4x4(float arrei[4][4]) : arr{{arrei[0][0],arrei[0][1],arrei[0][
 {
 
 }
-//constructor
+//constructor, brukes når jeg skal lage en generell matrise, populert med 0'er
 Matrix4x4::Matrix4x4()
 {
     for (int i = 0; i < 4; i++)
@@ -20,7 +20,7 @@ Matrix4x4::Matrix4x4()
         }
     }
 }
-//Matrise med konstant
+//Matrise * konstant
 Matrix4x4 Matrix4x4::operator * (float v)
 {
     float arrB[4][4];
