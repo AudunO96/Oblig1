@@ -134,7 +134,12 @@ void Matrix4x4::rotate(float rotateAng, Vector3d rotate)
 
 void Matrix4x4::translate(float tx, float ty, float tz)
 {
-
+    Matrix4x4 u;
+    u.setToIdentity();
+    u.arr[0][3] = tx;
+    u.arr[1][3] = ty;
+    u.arr[2][3] = tz;
+    *this * u;
 }
 
 //funksjon for å gjøre en matrise om til en identitetsmatrise
